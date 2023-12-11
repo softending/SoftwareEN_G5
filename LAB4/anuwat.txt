@@ -1,0 +1,181 @@
+Last login: Wed Dec  6 14:06:23 on ttys001
+anuwat@Anuwat-3 ~ % mkdir software_engineering
+anuwat@Anuwat-3 ~ % cd software_engineering
+anuwat@Anuwat-3 software_engineering % mkdir git_643020060-0
+anuwat@Anuwat-3 software_engineering % cd git_643020060-0
+anuwat@Anuwat-3 git_643020060-0 % git int
+git: 'int' is not a git command. See 'git --help'.
+
+The most similar command is
+	init
+anuwat@Anuwat-3 git_643020060-0 % git init
+Initialized empty Git repository in /Users/anuwat/software_engineering/git_643020060-0/.git/
+anuwat@Anuwat-3 git_643020060-0 % git status
+On branch master
+
+No commits yet
+
+nothing to commit (create/copy files and use "git add" to track)
+anuwat@Anuwat-3 git_643020060-0 % git add.
+git: 'add.' is not a git command. See 'git --help'.
+
+The most similar command is
+	add
+anuwat@Anuwat-3 git_643020060-0 % git add .
+anuwat@Anuwat-3 git_643020060-0 % git commit -m "My first commit"
+On branch master
+
+Initial commit
+
+nothing to commit
+anuwat@Anuwat-3 git_643020060-0 % git push -u origin master
+error: src refspec master does not match any.
+error: failed to push some refs to 'origin'
+anuwat@Anuwat-3 git_643020060-0 % ls -a
+.	..	.git
+anuwat@Anuwat-3 git_643020060-0 % nano Startfile.txt
+anuwat@Anuwat-3 git_643020060-0 % ls -a
+.		..		.git		Startfile.txt
+anuwat@Anuwat-3 git_643020060-0 % git add Startfile.txt
+anuwat@Anuwat-3 git_643020060-0 % git commit -m "Add Startfile.txt file"
+[master (root-commit) c8fec1a] Add Startfile.txt file
+ 1 file changed, 1 insertion(+)
+ create mode 100644 Startfile.txt
+anuwat@Anuwat-3 git_643020060-0 % nano Startfile.txt
+anuwat@Anuwat-3 git_643020060-0 % git status
+On branch master
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git checkout -- <file>..." to discard changes in working directory)
+
+	modified:   Startfile.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+anuwat@Anuwat-3 git_643020060-0 % git commit -m "Create Startfile.txt with author's name"
+On branch master
+Changes not staged for commit:
+	modified:   Startfile.txt
+
+no changes added to commit
+anuwat@Anuwat-3 git_643020060-0 % git add Startfile.txt
+anuwat@Anuwat-3 git_643020060-0 % git commit -m "Create Startfile.txt with author's name"
+[master e57571b] Create Startfile.txt with author's name
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+anuwat@Anuwat-3 git_643020060-0 % nano Startfile.txt                       
+anuwat@Anuwat-3 git_643020060-0 % git status
+On branch master
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git checkout -- <file>..." to discard changes in working directory)
+
+	modified:   Startfile.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+anuwat@Anuwat-3 git_643020060-0 % git add Startfile.txt                                  
+anuwat@Anuwat-3 git_643020060-0 % git commit -m "Add personal quote to Startfile.txt"    
+[master 256512b] Add personal quote to Startfile.txt
+ 1 file changed, 1 insertion(+)
+anuwat@Anuwat-3 git_643020060-0 % nano Secondfile.html
+anuwat@Anuwat-3 git_643020060-0 % git status
+On branch master
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+	Secondfile.html
+
+nothing added to commit but untracked files present (use "git add" to track)
+anuwat@Anuwat-3 git_643020060-0 % nano Startfile.txt
+anuwat@Anuwat-3 git_643020060-0 % git status
+On branch master
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git checkout -- <file>..." to discard changes in working directory)
+
+	modified:   Startfile.txt
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+	Secondfile.html
+
+no changes added to commit (use "git add" and/or "git commit -a")
+anuwat@Anuwat-3 git_643020060-0 % nano Thirdfile.txt
+anuwat@Anuwat-3 git_643020060-0 % git status
+On branch master
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git checkout -- <file>..." to discard changes in working directory)
+
+	modified:   Startfile.txt
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+	Secondfile.html
+	Thirdfile.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+anuwat@Anuwat-3 git_643020060-0 % nano .gitignore
+anuwat@Anuwat-3 git_643020060-0 % nano Startfile.txt
+anuwat@Anuwat-3 git_643020060-0 % git status
+On branch master
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git checkout -- <file>..." to discard changes in working directory)
+
+	modified:   Startfile.txt
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+	.gitignore
+	Secondfile.html
+	Thirdfile.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+anuwat@Anuwat-3 git_643020060-0 % git add .
+anuwat@Anuwat-3 git_643020060-0 % git commit -m "Create Thirdfile.log which is a git ifnore file"
+[master b0b190e] Create Thirdfile.log which is a git ifnore file
+ 4 files changed, 4 insertions(+)
+ create mode 100644 .gitignore
+ create mode 100644 Secondfile.html
+ create mode 100644 Thirdfile.txt
+anuwat@Anuwat-3 git_643020060-0 % nano Startfile.txt
+anuwat@Anuwat-3 git_643020060-0 % command > terminal_output.txt
+zsh: redirection with no command
+anuwat@Anuwat-3 git_643020060-0 % git branch MyBranch
+anuwat@Anuwat-3 git_643020060-0 % git switch MyBranch
+git: 'switch' is not a git command. See 'git --help'.
+anuwat@Anuwat-3 git_643020060-0 % git checkout MyBranch
+M	Startfile.txt
+Switched to branch 'MyBranch'
+anuwat@Anuwat-3 git_643020060-0 % ls -a
+.		..		.git		.gitignore	Secondfile.html	Startfile.txt	Thirdfile.txt
+anuwat@Anuwat-3 git_643020060-0 % git checkout master
+M	Startfile.txt
+Switched to branch 'master'
+anuwat@Anuwat-3 git_643020060-0 % git add Startfile.txt
+anuwat@Anuwat-3 git_643020060-0 % git commit           
+[master f5be154] "Edit Startfile.txt"
+ 1 file changed, 1 deletion(-)
+anuwat@Anuwat-3 git_643020060-0 % git checkout MyBranch
+Switched to branch 'MyBranch'
+anuwat@Anuwat-3 git_643020060-0 % nano Forthfile.css
+anuwat@Anuwat-3 git_643020060-0 % git add Forthfile.css 
+anuwat@Anuwat-3 git_643020060-0 % nano Forthfile.css                                                             
+anuwat@Anuwat-3 git_643020060-0 % nano Forthfile.css
+anuwat@Anuwat-3 git_643020060-0 % nano Startfile.txt
+anuwat@Anuwat-3 git_643020060-0 % 
+anuwat@Anuwat-3 git_643020060-0 % git add Startfile.txt
+anuwat@Anuwat-3 git_643020060-0 % git add Forthfile.css
+anuwat@Anuwat-3 git_643020060-0 % git commit -m "Create Forthfile.css and add the semester to Start.txt"
+[MyBranch 438c203] Create Forthfile.css and add the semester to Start.txt
+ 2 files changed, 1 insertion(+)
+ create mode 100644 Forthfile.css
+anuwat@Anuwat-3 git_643020060-0 % git checkout master
+Switched to branch 'master'
+anuwat@Anuwat-3 git_643020060-0 % git merge MyBranch
+Auto-merging Startfile.txt
+CONFLICT (content): Merge conflict in Startfile.txt
+Automatic merge failed; fix conflicts and then commit the result.
+anuwat@Anuwat-3 git_643020060-0 % 
