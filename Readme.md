@@ -1,4 +1,6 @@
 # group5
+ชื่อ นางสาวลิมาลัย ปิยะแสง รหัสนักศึกษา 643021249-5 Sec.2 Username Github:limalai
+![My Image](/media/limalai.JPG)
 ชื่อ นายภูวดล นาสิงทอง รหัสนักศึกษา 643021245-3 Sec.2 Username Github:Big225  
 ![My Image](media/Bigpwd_pic.jpg)
 ชื่อ กิระวัฒน์ คำใจ รหัสนักศึกษา 643021218-6 Sec.2 Username Github: kirawat1  
