@@ -3,7 +3,7 @@
 --
 
 -- --------------------------------------------------------u
-USE prestashop
+USE prestashop;
 DROP TABLE IF EXISTS `ps_access`;
 DROP TABLE IF EXISTS `ps_accessory`;
 DROP TABLE IF EXISTS `ps_address`;
