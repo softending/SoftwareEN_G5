@@ -1,7 +1,7 @@
 import { test, expect } from '@playwright/test';
 
 test('test', async ({ page }) => {
-  await page.goto('http://localhost:8080/en/home/25-1000-voucher.html');
+  await page.goto('http://localhost:8080/en/clothes/23-40--pre-orfer-17-feb-2024-jacket-60-years-kku.html#/1-size-s');
   await page.locator('button.btn.btn-primary.add-to-cart[data-button-action="add-to-cart"]').click();
   await page.locator('a.btn.btn-primary[href="//localhost:8080/en/cart?action=show"]').click();
   await page.locator('a.btn.btn-primary[href="http://localhost:8080/en/order"]').click();
@@ -28,8 +28,10 @@ test('test', async ({ page }) => {
   await page.locator('#field-id_country').selectOption({ value: '204' });
 
   await page.getByLabel('Use this address for invoice too').click();
-  await page.waitForTimeout(1000);
+  await page.waitForTimeout(2000);
 
+  await page.getByRole('button', { name: 'CONTINUE' }).click();
+  await page.waitForTimeout(2000);
   await page.getByRole('button', { name: 'CONTINUE' }).click();
   await page.waitForTimeout(2000);
 
@@ -38,6 +40,7 @@ test('test', async ({ page }) => {
   await page.waitForSelector('button.btn.btn-primary.center-block:has-text("PLACE ORDER")')
   await page.waitForTimeout(1000);
   await page.click('button.btn.btn-primary.center-block:has-text("PLACE ORDER")');
+
   await page.waitForTimeout(1000);
   await page.goto('http://localhost:8080/en/module/onlinepayment/payment');
   await page.waitForTimeout(1000);
@@ -47,7 +50,7 @@ test('test', async ({ page }) => {
   if (fileInput) {
     await fileInput.setInputFiles(filePath);
     await page.waitForTimeout(1000);
-    await page.$('button[name="placeorder"]').then(button => button && button.click());
+    await page.$('button[name="placeorder"]').then(button => button && button.click({ timeout: 5000 }));
     await page.close();
   } else {
     console.error("File input element not found.");
