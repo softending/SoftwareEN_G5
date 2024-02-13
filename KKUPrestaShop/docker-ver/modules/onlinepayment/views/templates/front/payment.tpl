@@ -1,17 +1,16 @@
 {extends file='page.tpl'}
 
 {block name="content"}
-    <div class="col-md-12">
-        <label for="qrpayment_option">QR Payment</label>
+    <div class="col-md-12" style="display: flex; flex-direction:column; align-items: center;">
+        <label for="qrpayment_option" style="font-size: 1rem;" >QR Payment</label>
 
-        <img src="{$qr_img}"> 
-        <!-- <input type="radio" name="onlinepayment_option" id="qrpayment_option" />
-        <label for="banktransfer_option">Bank Transfer</label>
-        <input type="radio" name="onlinepayment_option" id="banktransfer_option" /> -->
+        <img src="{$qr_img}" > 
+
         <form method="post" enctype="multipart/form-data">
-            <label for="slip_upload">แนบสลิปการโอน</label>
-            <input type="file" name="slip_upload" id="slip_upload" />
-            <button type="submit" name="placeorder">
+            <label for="slip_upload" style="font-size: 1rem;" >แนบสลิปการโอน</label>
+            <input id="slip_upload" type="file" name="slip_upload" class="filestyle" data-buttontext="เลือกไฟล์" tabindex="-1" style="position: absolute; clip: rect(0px, 0px, 0px, 0px); left: 0;">
+
+            <button type="submit" name="placeorder" style="color: #fff; background-color: #24b9d7; border-color: transparent; position: relative; top: 15px;">
                 Upload
             </button>
         </form>
