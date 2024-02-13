@@ -28,12 +28,12 @@ test('test', async ({ page }) => {
   await page.locator('#field-id_country').selectOption({ value: '204' });
 
   await page.getByLabel('Use this address for invoice too').click();
-  await page.waitForTimeout(2000);
+  await page.waitForTimeout(1000);
 
   await page.getByRole('button', { name: 'CONTINUE' }).click();
-  await page.waitForTimeout(2000);
+  await page.waitForTimeout(1000);
   await page.getByRole('button', { name: 'CONTINUE' }).click();
-  await page.waitForTimeout(2000);
+  await page.waitForTimeout(1000);
 
   await page.getByLabel('Online Payment').check();
   await page.waitForTimeout(1000);
@@ -50,7 +50,7 @@ test('test', async ({ page }) => {
   if (fileInput) {
     await fileInput.setInputFiles(filePath);
     await page.waitForTimeout(1000);
-    await page.$('button[name="placeorder"]').then(button => button && button.click({ timeout: 5000 }));
+    await page.$('button[name="placeorder"]').then(button => button && button.click());
     await page.close();
   } else {
     console.error("File input element not found.");
