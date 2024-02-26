@@ -27,6 +27,7 @@ class OnlinePaymentPaymentModuleFrontController extends ModuleFrontController
         parent::initContent();
         $this->context->smarty->assign([
             'qr_img' =>  $PromptPayQR->generate()
+            
         ]);
         $this->setTemplate('module:onlinepayment/views/templates/front/payment.tpl');
     }
