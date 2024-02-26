@@ -5,7 +5,7 @@
     <label for="qrpayment_option" style="font-size: 1rem;">QR Payment</label>
 
     <img src="{$qr_img}">
-    <span>{$TOTAL}</span>
+
     <form method="post" enctype="multipart/form-data">
         <label for="slip_upload" style="font-size: 1rem;">แนบสลิป หลักฐานการโอนเงิน</label>
         <input id="slip_upload" type="file" name="slip_upload" class="filestyle" data-buttontext="add file"
