@@ -13,7 +13,7 @@ services:
       - dbdata:/var/lib/mysql
   prestashop:
     container_name: prestashop
-    image: kunita09/prestashop:latest
+    image: kirawat1/prestashop:latest
     restart: unless-stopped
     depends_on:
       - db
@@ -32,6 +32,11 @@ services:
       - ./img:/var/www/html/img
       - ./template:/var/www/html/template
       - ./themes:/var/www/html/themes
+      - ./controllers:/var/www/html/controllers
+      - ./pdf:/var/www/html/pdf
+      - ./classes:/var/www/html/classes
+      - ./mails:/var/www/html/mails
+      - ./modules:/var/www/html/modules
 
   phpmyadmin:
     image: phpmyadmin/phpmyadmin
