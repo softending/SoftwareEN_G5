@@ -16,6 +16,12 @@
                 <label for="bank_id" style="font-size: 1rem;">หมายเลขบัญชี:</label>
                 <span>{$PAYMENT_BANK_ID}</span>
             </div>
+
+            <div class="payment-detail">
+                <label for="bank_id" style="font-size: 1rem;">หมายเลขพร้อมเพย์:</label>
+                <span>090-235-4923</span>
+            </div>
+
             <div class="payment-detail">
                 <label for="total" style="font-size: 1rem;">ยอดรวมทั้งสิ้น:</label>
                 <span>{$TOTAL}</span>
