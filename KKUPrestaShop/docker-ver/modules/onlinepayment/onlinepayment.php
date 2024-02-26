@@ -32,10 +32,10 @@ class OnlinePayment extends PaymentModule
         $this->tab = 'payments_gateways';
         $this->version = '1.0.0';
         $this->ps_versions_compliancy = ['min' => '1.7.6.0', 'max' => _PS_VERSION_];
-        $this->author = 'SEN Power of friendship';
+        $this->author = '10 20 30 life';
         $this->bootstrap = true;
         parent::__construct();
-        $this->displayName = $this->l('Online payment');
+        $this->displayName = $this->l('onlinepayment');
         $this->description = $this->l('Accept payments by displaying QR Code and Bank account number during the checkout.');
     }
 
@@ -62,14 +62,27 @@ class OnlinePayment extends PaymentModule
 
     public function hookPaymentOptions()
     {
-        $OnlinePaymentOption = new PaymentOption();
-        $OnlinePaymentOption->setModuleName($this->name)
-                ->setCallToActionText($this->l('Online Payment'))
-                ->setAction($this->context->link->getModuleLink($this->name, 'payment', [], true))
-                ->setAdditionalInformation($this->fetch('module:onlinepayment/views/templates/hook/onlinepayment_intro.tpl'));
+        $QrPaymentOption = new PaymentOption();
+        $QrPaymentOption->setModuleName($this->name)
+                ->setCallToActionText($this->l('QR Payment'))
+                ->setAction($this->context->link->getModuleLink($this->name, 'qr', [], true));
+                
+        $BankPaymentOption = new PaymentOption();
+        $BankPaymentOption->setModuleName($this->name)
+                ->setCallToActionText($this->l('Bank Payment'))
+                ->setAction($this->context->link->getModuleLink($this->name, 'bank', [], true));
+               
+
+        $CounterServicePaymentOption = new PaymentOption();
+        $CounterServicePaymentOption->setModuleName($this->name)
+                ->setCallToActionText($this->l('Counter Service Payment'))
+                ->setAction($this->context->link->getModuleLink($this->name, 'counterservice', [],true));
+                // ->setAdditionalInformation($this->fetch('module:onlinepayment/views/templateshook/onlinepayment_intro.tpl'));
         
         $payment_options = [
-            $OnlinePaymentOption,
+            $QrPaymentOption,
+            $BankPaymentOption,
+            $CounterServicePaymentOption,
         ];
 
         return $payment_options;
@@ -85,10 +98,7 @@ class OnlinePayment extends PaymentModule
             Configuration::updateValue('QRPAYMENT_IMG_ID', $id_qr);
             Configuration::updateValue('QRPAYMENT_IMG_SIZE', $size_qr);
         }
-        // Tools::dieObject([
-        //     'QRPAYMENT_IMG_ID' => Configuration::get('QRPAYMENT_IMG_ID'),
-        //     'QRPAYMENT_IMG_SIZE' => Configuration::get('QRPAYMENT_IMG_SIZE')
-        // ]);
+
         $this->context->smarty->assign([
             'QRPAYMENT_IMG_ID' => Configuration::get('QRPAYMENT_IMG_ID'),
             'QRPAYMENT_IMG_SIZE' => Configuration::get('QRPAYMENT_IMG_SIZE')

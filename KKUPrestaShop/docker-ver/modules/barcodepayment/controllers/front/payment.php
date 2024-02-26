@@ -1,7 +1,8 @@
 <?php
-require_once("lib/PromptPayQR.php");
+require_once("src/BarcodeGenerator.php");
+require_once("src/BarcodeGeneratorHTML.php");
 
-class OnlinePaymentPaymentModuleFrontController extends ModuleFrontController
+class BarcodePaymentPaymentModuleFrontController extends ModuleFrontController
 {
 
     public function init()
@@ -16,20 +17,19 @@ class OnlinePaymentPaymentModuleFrontController extends ModuleFrontController
     public function initContent()
     {
         
+        use Picqer\Barcode\BarcodeGeneratorHTML;
+
         $cart = $this->context->cart;
         $total = (float)$cart->getOrderTotal(true, Cart::BOTH);
-        $PromptPayQR = new PromptPayQR(); // new object
-        $PromptPayQR->size = Configuration::get('QRPAYMENT_IMG_SIZE'); // Set QR code size to 8
-        $PromptPayQR->id = Configuration::get('QRPAYMENT_IMG_ID'); // PromptPay ID
-        $PromptPayQR->amount = $total; // Set amount (not necessary)
+        $barcodeText = number_format($total, 2, '.', '');
+        $generator = new BarcodeGeneratorHTML();
         
-
         parent::initContent();
         $this->context->smarty->assign([
-            'qr_img' =>  $PromptPayQR->generate()
-            
+            'TOTAL' => $total,
+            'BARCODE' => $generator
         ]);
-        $this->setTemplate('module:onlinepayment/views/templates/front/payment.tpl');
+        $this->setTemplate('module:barcodepayment/views/templates/front/payment.tpl');
     }
     
     
