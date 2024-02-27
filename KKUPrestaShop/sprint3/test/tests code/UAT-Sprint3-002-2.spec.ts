@@ -19,14 +19,14 @@ test('test', async ({ page }) => {
   await page.waitForSelector('button.continue.btn.btn-primary.float-xs-right:has-text("CONTINUE")');
   await page.click('button.continue.btn.btn-primary.float-xs-right:has-text("CONTINUE")');
   
-  await page.getByLabel('Online Payment').check();
+  await page.getByLabel('QR Payment').check();
   await page.waitForTimeout(1000);
   await page.waitForSelector('button.btn.btn-primary.center-block:has-text("PLACE ORDER")')
   await page.waitForTimeout(1000);
   await page.click('button.btn.btn-primary.center-block:has-text("PLACE ORDER")');
 
   await page.waitForTimeout(1000);
-  await page.goto('http://localhost:8080/en/module/onlinepayment/payment');
+  await page.goto('http://localhost:8080/en/module/onlinepayment/qr');
   await page.close();
   
   
