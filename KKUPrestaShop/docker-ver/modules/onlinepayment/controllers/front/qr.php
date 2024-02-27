@@ -18,7 +18,18 @@ class onlinepaymentqrModuleFrontController extends ModuleFrontController
 
     public function initContent()
     {
-        
+
+        $start_time = time();
+
+        // รอเป็นเวลา 10 นาที
+        sleep(600); // 10 นาที = 600 วินาที
+
+        // จบการจับเวลา
+        $end_time = time();
+
+        // คำนวณระยะเวลาที่ใช้
+        $elapsed_time = $end_time - $start_time;
+
         $cart = $this->context->cart;
         $total = (float)$cart->getOrderTotal(true, Cart::BOTH);
         $PromptPayQR = new PromptPayQR(); // new object
@@ -30,7 +41,8 @@ class onlinepaymentqrModuleFrontController extends ModuleFrontController
         parent::initContent();
         $this->context->smarty->assign([
             'qr_img' => $PromptPayQR->generate(),
-            'total'  => $total
+            'total'  => $total,
+            'time'   => 
             
         ]);
         $this->setTemplate('module:onlinepayment/views/templates/front/qr.tpl');

@@ -17,7 +17,7 @@
 
         <div class="payment-detail">
             <label for="total" style="font-size: 1rem;">ยอดรวมทั้งสิ้น:</label>
-            <span>{$TOTAL}</span>
+            <span>{$TOTAL} THB</span>
         </div>
     </div>
 

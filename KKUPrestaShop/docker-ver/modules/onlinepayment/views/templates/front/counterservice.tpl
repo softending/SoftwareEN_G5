@@ -16,7 +16,8 @@
                                     style="width: 128px;">
                             </div>
                             <div>
-                                <div style="font-size: larger; font-weight: bold;">มหาวิทยาลัยขอนแก่น</div>
+                                <div style="font-size: larger; font-weight: bold;">สมคมศิษย์เก่าวิทยาการคอมพิวเตอร์
+                                </div>
                                 <div>โทร.(043)34786 เลขประจำตัวผู้เสียภาษีอากร 0994000391528</div>
                             </div>
                         </div>
@@ -43,16 +44,16 @@
                             สำหรับเจ้าหน้าที่ธนาคาร / Bank Use Only</div>
                     </div>
                     <div style="outline: 2px solid #000; outline-offset: -1px; padding: 8px;">
-                        <div style="font-weight: bold;">จำนวนเงินทั้งหมด {$TOTAL}</div>
+                        <div style="font-weight: bold;">จำนวนเงินทั้งหมด {$TOTAL} บาท</div>
                     </div>
                     <div style="display: flex; flex-direction: column; outline: 2px solid #000; outline-offset: -1px;">
                         <div style="outline: 2px solid #000; outline-offset: -1px; padding: 8px;">
-                            <div style="font-weight: bold;">ผู้รับเงิน</div>
-                            <div>Recived By</div>
+                            <div style="font-weight: bold;">ผู้รับเงิน กิระวัฒน์ คำใจ</div>
+                            <div>Recived By Kirawat Khamjai</div>
                         </div>
                         <div style="outline: 2px solid #000; outline-offset: -1px; padding: 8px;">
-                            <div style="font-weight: bold;">ผู้รับมอบอำนาจ</div>
-                            <div>Recived By</div>
+                            <div style="font-weight: bold;">ผู้รับมอบอำนาจ -</div>
+                            <div>Recived By -</div>
                         </div>
                     </div>
                 </div>

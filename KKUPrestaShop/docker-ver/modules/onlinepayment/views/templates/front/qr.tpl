@@ -8,7 +8,7 @@
 
     <div class="payment-detail">
         <label for="total" style="font-size: 1rem;">ยอดรวมทั้งสิ้น:</label>
-        <span>{$total}</span>
+        <span>{$total} THB</span>
     </div>
     <form method="post" enctype="multipart/form-data">
         <label for="slip_upload" style="font-size: 1rem;">แนบสลิป หลักฐานการโอนเงิน</label>
