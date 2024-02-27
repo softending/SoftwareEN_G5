@@ -16,7 +16,7 @@
                                     style="width: 128px;">
                             </div>
                             <div>
-                                <div style="font-size: larger; font-weight: bold;">สมคมศิษย์เก่าวิทยาการคอมพิวเตอร์
+                                <div style="font-size: larger; font-weight: bold;">สมาคมศิษย์เก่าวิทยาการคอมพิวเตอร์
                                 </div>
                                 <div>โทร.(043)34786 เลขประจำตัวผู้เสียภาษีอากร 0994000391528</div>
                             </div>
