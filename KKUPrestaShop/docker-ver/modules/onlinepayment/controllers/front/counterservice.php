@@ -20,13 +20,11 @@ class onlinepaymentcounterserviceModuleFrontController extends ModuleFrontContro
 
     public function initContent()
     {
-        
-        $code = "0010104";
-        $phone_number = '001';
+        $code = $this->generateCode();
         $generator = new Picqer\Barcode\BarcodeGeneratorHTML();
         $cart = $this->context->cart;
         $total = (float)$cart->getOrderTotal(true, Cart::BOTH);
-        $barcode_data = "$total";
+        $barcode_data = "$code";
 
         parent::initContent();
         $this->context->smarty->assign([
@@ -143,5 +141,15 @@ class onlinepaymentcounterserviceModuleFrontController extends ModuleFrontContro
         $qrcode->decode();
         $result = $qrcode->getResult();
         return $result;
+    }
+
+    private function generateCode($length = 9) {
+        $characters = '0123456789';
+        $charactersLength = strlen($characters);
+        $randomString = '';
+        for ($i = 0; $i < $length; $i++) {
+            $randomString .= $characters[rand(0, $charactersLength - 1)];
+        }
+        return $randomString;
     }
 }
