@@ -6,6 +6,10 @@
 
     <img src="{$qr_img}">
 
+    <div class="payment-detail">
+        <label for="total" style="font-size: 1rem;">ยอดรวมทั้งสิ้น:</label>
+        <span>{$total}</span>
+    </div>
     <form method="post" enctype="multipart/form-data">
         <label for="slip_upload" style="font-size: 1rem;">แนบสลิป หลักฐานการโอนเงิน</label>
         <input id="slip_upload" type="file" name="slip_upload" class="filestyle" data-buttontext="add file"

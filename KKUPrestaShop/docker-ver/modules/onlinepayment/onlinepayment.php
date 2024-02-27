@@ -73,6 +73,11 @@ class OnlinePayment extends PaymentModule
                 ->setAction($this->context->link->getModuleLink($this->name, 'bank', [], true));
                
 
+        $PpPaymentOption = new PaymentOption();
+        $PpPaymentOption->setModuleName($this->name)
+                ->setCallToActionText($this->l('Promptpay'))
+                ->setAction($this->context->link->getModuleLink($this->name, 'pp', [], true));
+
         $CounterServicePaymentOption = new PaymentOption();
         $CounterServicePaymentOption->setModuleName($this->name)
                 ->setCallToActionText($this->l('Counter Service Payment'))
@@ -83,6 +88,7 @@ class OnlinePayment extends PaymentModule
             $QrPaymentOption,
             $BankPaymentOption,
             $CounterServicePaymentOption,
+            $PpPaymentOption,
         ];
 
         return $payment_options;
@@ -97,11 +103,32 @@ class OnlinePayment extends PaymentModule
             $size_qr = Tools::getValue('size_qr');
             Configuration::updateValue('QRPAYMENT_IMG_ID', $id_qr);
             Configuration::updateValue('QRPAYMENT_IMG_SIZE', $size_qr);
+
+            $name_bank = Tools::getValue('name_bank');
+            $id_bank = Tools::getValue('id_bank');
+            $account_name = Tools::getValue('account_name');
+            Configuration::updateValue('PAYMENT_BANK_NAME', $name_bank);
+            Configuration::updateValue('PAYMENT_BANK_ID', $id_bank);
+            Configuration::updateValue('PAYMENT_ACCOUNT_NAME', $account_name);
+
+            $id_card = Tools::getValue('id_card');
+            $phone = Tools::getValue('phone');
+            Configuration::updateValue('ID_CARD', $id_card);
+            Configuration::updateValue('PHONE', $phone);
+            
+            $code = Tools::getValue('CODE');
+            Configuration::updateValue('CODE', $code);
         }
 
         $this->context->smarty->assign([
             'QRPAYMENT_IMG_ID' => Configuration::get('QRPAYMENT_IMG_ID'),
-            'QRPAYMENT_IMG_SIZE' => Configuration::get('QRPAYMENT_IMG_SIZE')
+            'QRPAYMENT_IMG_SIZE' => Configuration::get('QRPAYMENT_IMG_SIZE'),
+            'PAYMENT_BANK_NAME' => Configuration::get('PAYMENT_BANK_NAME'),
+            'PAYMENT_BANK_ID' => Configuration::get('PAYMENT_BANK_ID'),
+            'PAYMENT_ACCOUNT_NAME' => Configuration::get('PAYMENT_ACCOUNT_NAME'),
+            'ID_CARD' => Configuration::get('ID_CARD'),
+            'PHONE' => Configuration::get('PHONE'),
+            'CODE' => Configuration::get('CODE')
         ]);
         return $this->fetch('module:onlinepayment/views/templates/admin/configure.tpl');
     }

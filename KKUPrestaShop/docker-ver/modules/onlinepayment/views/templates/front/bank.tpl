@@ -5,7 +5,7 @@
     <label for="qrpayment_option">Bank Payment</label>
     <div class="payment-details" style="font-size: 1rem;">
         <div class="payment-detail">
-            <label for="bank_name" style="font-size: 1rem;">ชื่อธนาคาร test:</label>
+            <label for="bank_name" style="font-size: 1rem;">ชื่อธนาคาร :</label>
             <span>{$PAYMENT_BANK_NAME}</span>
         </div>
         <div class="payment-detail">
@@ -15,11 +15,6 @@
         <div class="payment-detail">
             <label for="bank_id" style="font-size: 1rem;">หมายเลขบัญชี:</label>
             <span>{$PAYMENT_BANK_ID}</span>
-        </div>
-
-        <div class="payment-detail">
-            <label for="bank_id" style="font-size: 1rem;">หมายเลขพร้อมเพย์:</label>
-            <span>090-235-4923</span>
         </div>
 
         <div class="payment-detail">
