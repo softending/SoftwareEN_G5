@@ -16,7 +16,7 @@
                                     style="width: 128px;">
                             </div>
                             <div>
-                                <div style="font-size: larger; font-weight: bold;">สมคมศิษย์เก่าวิทยาการคอมพิวเตอร์
+                                <div style="font-size: larger; font-weight: bold;">สมาคมศิษย์เก่าวิทยาการคอมพิวเตอร์
                                 </div>
                                 <div>โทร.(043)34786 เลขประจำตัวผู้เสียภาษีอากร 0994000391528</div>
                             </div>
@@ -48,8 +48,8 @@
                     </div>
                     <div style="display: flex; flex-direction: column; outline: 2px solid #000; outline-offset: -1px;">
                         <div style="outline: 2px solid #000; outline-offset: -1px; padding: 8px;">
-                            <div style="font-weight: bold;">ผู้รับเงิน กิระวัฒน์ คำใจ</div>
-                            <div>Recived By Kirawat Khamjai</div>
+                            <div style="font-weight: bold;">ผู้รับเงิน -</div>
+                            <div>Recived By -</div>
                         </div>
                         <div style="outline: 2px solid #000; outline-offset: -1px; padding: 8px;">
                             <div style="font-weight: bold;">ผู้รับมอบอำนาจ -</div>
@@ -63,7 +63,7 @@
                             สามารถชำระเงินได้ที่ธนาคารตามรายชื่อที่รับชำระบิลทุกสาขาทั่วประเทศ หรือชำระผ่าน mobile
                             banking ของแต่ละธนาคาร</div>
                         <div style="font-weight: bold; text-align: center;">
-                            การลงทะเบียนจะสมบูรณ์ต่อเมื่อมหาวิทยาลัยขอนแก่นได้รับเงินเรียบร้อยแล้ว</div>
+                            การลงทะเบียนจะสมบูรณ์ต่อเมื่อสมาคมศิษย์เก่าวิทยาการคอมพิวเตอร์ได้รับเงินเรียบร้อยแล้ว</div>
                         <div style="margin: 16px;">
                             {if $BARCODE}
                             <div style="display: flex; flex-direction: column; align-items: center;">

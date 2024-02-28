@@ -19,30 +19,23 @@ class onlinepaymentqrModuleFrontController extends ModuleFrontController
     public function initContent()
     {
 
-        $start_time = time();
-
-        // รอเป็นเวลา 10 นาที
-        sleep(600); // 10 นาที = 600 วินาที
-
-        // จบการจับเวลา
-        $end_time = time();
-
-        // คำนวณระยะเวลาที่ใช้
-        $elapsed_time = $end_time - $start_time;
-
         $cart = $this->context->cart;
         $total = (float)$cart->getOrderTotal(true, Cart::BOTH);
         $PromptPayQR = new PromptPayQR(); // new object
         $PromptPayQR->size = Configuration::get('QRPAYMENT_IMG_SIZE'); // Set QR code size to 8
         $PromptPayQR->id = Configuration::get('QRPAYMENT_IMG_ID'); // PromptPay ID
         $PromptPayQR->amount = $total; // Set amount (not necessary)
+
+        $randomString = $this->generateRandomString();
+
+
         
 
         parent::initContent();
         $this->context->smarty->assign([
             'qr_img' => $PromptPayQR->generate(),
             'total'  => $total,
-            'time'   => 
+            'ref'   => $randomString
             
         ]);
         $this->setTemplate('module:onlinepayment/views/templates/front/qr.tpl');
@@ -114,4 +107,15 @@ class onlinepaymentqrModuleFrontController extends ModuleFrontController
         $result = $qrcode->getResult();
         return $result;
     }
+
+    private function generateRandomString($length = 6) {
+        $characters = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
+        $charactersLength = strlen($characters);
+        $randomString = '';
+        for ($i = 0; $i < $length; $i++) {
+            $randomString .= $characters[rand(0, $charactersLength - 1)];
+        }
+        return $randomString;
+    }
+    
 }
